@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+    form{
+        margin-left: 360px;
+    }
+    body{
+        background-color: black;
+    }
+    
+</style>
+<body>
+    
+    
+    <nav class="navbar navbar-inverse h">
+        <div class="container-fluid">
+            <div class="navbar-header">
+            <a class="navbar-brand" href="">Sheikh Muzammil</a>
+        </div>
+        <ul class="nav navbar-nav" >
+            <li><a href="">page-1</a></li>
+            <li class="dropdown"><a href="" class="dropdown-toggle" data-toggle="dropdown" >page-2 <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+                <li><a href="">Home</a></li>
+                <li><a href="">About</a></li>
+            </ul>
+            </li>
+            
+
+            <li><a href="">page-3</a></li>
+
+
+        </ul>                                                             
+        <ul class="nav navbar-nav navbar-right">
+            <li><a href="galaxy.html" class="glyphicon glyphicon-user"> SINGUP</a></li>
+            <li><a href="" class="glyphicon glyphicon-log-in"> LOGIN</a></li>
+        </ul>
+ 
+
+        </div>
+    </nav>
+    
+    <br><br>
+    <br><br><br><br>
+<form action="boot-1.html" class="col-md-4 m-auto">
+   <h1 class="bg-info rounded-lg text-white text-center" style="font-family: cursive;">SINGUP FORM</h1> 
+   <label for="" style="font-family: cursive; ">user name</label>
+   <input type="text" name="" id="name" class="form-control mt-2" style="font-family: cursive; color:gray;" placeholder="Enter your name">
+   <div id="d1"></div>
+   <label for="" style="font-family: cursive; color: gray;">Password</label>
+   <input type="password" name="" id="pass" class="form-control mt-2" style="font-family: cursive; color: gray;" placeholder="Enter your password">
+   <div id="d2"></div>
+   <label for="" style="font-family: cursive;">Confirm password</label>
+   <input type="password" name="" id="c_pass" class="form-control mt-2" style="font-family: cursive; color:grey; " placeholder="Enter your confirm password">
+   <div id="d3"></div>
+   <br>
+   Show password <input type="checkbox" name="" id="c1">
+   <h2></h2>
+   <input type="Submit" style="font-family: cursive;" class="btn btn-warning btn-block mt-2" id="btn">
+</form>
+<script>
+    $('#btn').click(function(){
+    name = $('#nam').val();
+    sheikh = $('#pass').val();
+    cpass = $('#c_pass').val();
+    if(name =="")
+    {
+        $('#d1').html('please fill out thid field');
+        $('#d1').css('color','red');
+        $('#d1').css("fontfamily","cursive");
+        return false;
+    }    
+    else if(sheikh == "")
+    {
+        $('#d2').html('please fill out thid field');
+        $('#d2').css('color','red');
+        $('#d2').css("fontfamily","cursive");
+        return false;   
+    }
+    else if(cpass == "")
+    {
+        $('#d3').html('please fill out thid field');
+        $('#d3').css('color','red');
+        $('#d3').css("fontfamily","cursive");
+        return false;   
+    }
+    else if(name.length <=2)
+    {
+        $('#d1').html('Username must be 3 characters in lenght');
+        $('#d1').css('color','red');
+        $('#d1').css("fontfamily","cursive");
+        return false;      
+     }
+     else if(sheikh.length <=7)
+     {
+        $('#d2').html('Password must be greater than 8 characters ');
+        $('#d2').css('color','red');
+        $('#d2').css("fontfamily","cursive");
+        return false;      
+
+     }
+     else if(sheikh !== cpass)
+     {
+        $('#d3').html('password and confirm password should be same');
+        $('#d3').css('color','red');
+        $('#d3').css("fontfamily","cursive");
+        return false;      
+     }
+    
+    });
+    $('#c1').click(function(){
+        muza = $('#pass')[0];
+        mmil = $('#c_pass')[0];
+        if(muza.type == "password" && mmil.type == "password"){
+            muza.type ="text";
+            mmil.type ="text";
+        }
+        else{
+            muza.type ="password";
+            mmil.type ="password";
+        }
+
+    });
+</script>
+    
+</body>
+</html>
